@@ -1,9 +1,10 @@
-import { MouseEvent, useRef } from 'react';
+import React, { ChangeEvent, MouseEvent, useRef } from 'react';
 
 import useClickAnywhere from './use-click-anywhere';
 import useClickAway from './use-click-away';
 import useResize from './use-resize';
 import useDrip from './use-drip';
+import { isInputEvent } from './utils/assertion';
 import './App.css';
 
 function App() {
@@ -35,11 +36,15 @@ function App() {
 		//onClick?.(e);
 	};
 
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		console.log('handleChange isInputEvent', isInputEvent(e));
+	};
 	return (
 		<div className="App">
 			<div className="click-away" ref={clickAwayRef} onClick={handleClick}>
 				click away
 			</div>
+			<input type="text" onChange={handleChange} />
 		</div>
 	);
 }
