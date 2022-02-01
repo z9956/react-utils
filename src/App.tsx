@@ -1,9 +1,9 @@
 import React, { ChangeEvent, MouseEvent, useRef } from 'react';
 
-import useClickAnywhere from './use-click-anywhere';
-import useClickAway from './use-click-away';
-import useResize from './use-resize';
-import useDrip from './use-drip';
+import useDrip from "./utils/useDrip";
+import useClickAway from "./utils/useClickAway";
+import useClickAnywhere from "./utils/useClickAnywhere";
+import useResize from "./utils/useResize";
 import { isInputEvent } from './utils/assertion';
 import './App.css';
 
